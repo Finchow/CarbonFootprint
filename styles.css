@@ -1,3 +1,21 @@
-body {
-  background-color: black;
+@font-face {
+  font-family: Agbalumo;
+  src: url(fonts/Agbalumo-Regular.ttf);
 }
+.centered,
+.inputBox,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  color: #ffffff;
+  background-color: #0c0032;
+}
+
+.inputBox {
+  background-color: #190061;
+  margin: 5vh;
+} /*# sourceMappingURL=styles.css.map */

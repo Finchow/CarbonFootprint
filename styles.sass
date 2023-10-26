@@ -1,0 +1,21 @@
+@font-face
+  font-family: Agbalumo
+  src: url(fonts/Agbalumo-Regular.ttf)
+  font-colour: white
+
+.centered
+  display: flex
+  justify-content: center
+  align-items: center
+
+body
+  &
+    @extend font: Agbalumo
+    @extend .centered
+    color: #ffffff
+    background-color: #0C0032
+
+.inputBox
+  @extend .centered
+  background-color: #190061
+  margin: 5vh
