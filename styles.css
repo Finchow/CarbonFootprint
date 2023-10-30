@@ -3,25 +3,86 @@
   src: url(/fonts/Oswald-VariableFont_wght.ttf);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
   font-family: Oswald;
 }
 
 body {
   color: #ffffff;
-  background-color: #0c0032;
+  background-color: #41b3a3;
+  margin: 0;
+  padding: 0;
 }
 
-.flex-container {
+.header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
+  width: 100%;
+  background-color: #e8a87c;
 }
 
-.inputBox {
-  background-color: #190061;
-  margin: 5vh;
-  border-radius: 10%;
-  width: 40%;
-  height: 30%;
+h1 {
+  margin-left: 2vh;
 }
+
+.input-box {
+  background-color: #85dcba;
+  width: 40vh;
+  height: 30vh;
+}
+
+.sidebar {
+  width: 30vh;
+  background-color: #85dcba;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+  align-content: center;
+  text-align: center;
+  font-size: large;
+}
+
+.sidebar-item-margin {
+  margin-left: 3vh;
+}
+
+.number-field {
+  font-size: 14px;
+  position: relative;
+  --field-padding: 12px;
+  border-top: 20px solid transparent;
+}
+
+.number-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+  padding: var(--field-padding);
+}
+
+.buttons button {
+  margin: 3%;
+  width: 30%;
+  height: auto;
+}
+
+/* 
+  #E27D60 
+  #85DCBA
+  #E8A87C
+  #C38D9E
+  #41B3A3  
+*/

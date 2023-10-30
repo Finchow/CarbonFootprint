@@ -10,11 +10,18 @@
 </head>
 
 <body>
-    <h1>Carbon Calculator</h1>
-    <div class="flex-container">
-        <div class="inputBox">
-            <p>Enter your EAC (Estimated Annual Consumption)</p>
-            <input type="text">
+    <div class="header">
+        <h1>Carbon Calculator</h1>
+    </div>
+    <div class="sidebar">
+        <p>Enter your estimated annual consumption (Kwh)</p>
+        <label class="number-field">
+            <input id="input" type="number" placeholder="Enter EAC" />
+        </label>
+        <br>
+        <div class="buttons">
+            <button onclick="clickHandler()">Enter</button>
+            <button onclick="eraseInput()">Erase</button>
         </div>
     </div>
 </body>
