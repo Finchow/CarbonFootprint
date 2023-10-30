@@ -13,8 +13,9 @@
     <div class="header">
         <h1>Carbon Calculator</h1>
     </div>
+
     <div class="sidebar">
-        <p>Enter your estimated annual consumption (Kwh)</p>
+        <p id="top-text">Enter your estimated annual consumption (Kwh)</p>
         <label class="number-field">
             <input id="input" type="number" placeholder="Enter EAC" />
         </label>
@@ -23,6 +24,15 @@
             <button onclick="clickHandler()">Enter</button>
             <button onclick="eraseInput()">Erase</button>
         </div>
+        <p id="monthly-text">Switch to monthly consumption</p>
+        <label class="switch">
+            <input onchange="monthlySwitch()" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div class="main-section">
+        <h1>Your Statistics:</h1>
     </div>
 </body>
 
