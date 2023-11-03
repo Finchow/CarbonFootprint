@@ -11,7 +11,7 @@
 
 <body>
     <div class="header">
-        <h1>Carbon Calculator</h1>
+        <h1 id="title">Carbon Calculator</h1>
     </div>
 
     <div class="sidebar">
@@ -29,10 +29,22 @@
             <input onchange="monthlySwitch()" type="checkbox">
             <span class="slider round"></span>
         </label>
+        <p>Switch to business mode</p>
+        <label class="switch">
+            <input onchange="businessSwitch()" type="checkbox">
+            <span class="slider round"></span>
+        </label>
     </div>
 
     <div class="main-section">
-        <h1>Your Statistics:</h1>
+        <div class="custom-details">
+            <h1 id="personal">Your Statistics:</h1>
+            <p id="TotalOutput"></p>
+            <p id="Flights"></p>
+        </div>
+        <div class="average-details">
+            <h1 id="average">Average UK Citizens Statistics</h1>
+        </div>
     </div>
 </body>
 

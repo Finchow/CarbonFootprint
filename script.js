@@ -1,30 +1,51 @@
-const emissions = 0.207074288590604;
+const Emissions = 0.207074288590604;
 var monthly = false;
+var business = false;
 
-function clickHandler(monthly) {
+function documentWriter(id, text) {
+  document.getElementById(id).textContent = text;
+}
+
+function clickHandler() {
   clientUsage = document.getElementById("input").value;
-  output = calcCO2(clientUsage, emissions);
-  alert(`Your carbon output is: ${Math.round(output * 100) / 100} Kg per year`);
+  if (monthly === true) {
+    clientUsage *= 12;
+  }
+  output = Math.round(calcCO2(clientUsage, Emissions) * 100) / 100;
+  if (clientUsage > 0) {
+    statWriter(output);
+  }
 }
 
 function monthlySwitch() {
-  function changeText(period) {
-    document.getElementById(
-      "top-text"
-    ).textContent = `Enter your estimated ${period} consumption (Kwh)`;
-    document.getElementById(
-      "monthly-text"
-    ).textContent = `Switch to ${period} consumption`;
+  function changeText(period1, period2) {
+    documentWriter(
+      "top-text",
+      `Enter your estimated ${period1} consumption (Kwh)`
+    );
+    documentWriter("monthly-text", `Switch to ${period2} consumption`);
   }
   monthly = !monthly;
-  switch (monthly) {
-    case true:
-      changeText("monthly");
-      break;
-    case false:
-      changeText("annual");
-      break;
+  if (monthly) {
+    changeText("monthly", "annual");
+  } else {
+    changeText("annual", "monthly");
   }
+  clickHandler();
+}
+
+function businessSwitch() {
+  function changeText(period1, period2) {
+    documentWriter("personal", `Your ${period1} Statistics:`);
+    documentWriter("average", `Average UK ${period2} Consumption:`);
+  }
+  business = !business;
+  if (business) {
+    changeText("Business", "Business");
+  } else {
+    changeText("", "Citizens");
+  }
+  clickHandler();
 }
 
 function eraseInput() {
@@ -33,4 +54,17 @@ function eraseInput() {
 
 function calcCO2(usage, emissions) {
   return usage * (0.85 * emissions);
+}
+
+function statWriter(totalCo2) {
+  documentWriter(
+    "TotalOutput",
+    `Your carbon output from electricity is: ${totalCo2} Kg per year.`
+  );
+  documentWriter(
+    "Flights",
+    `Your electricity emissions are equivalent to ${Math.round(
+      totalCo2 / 90
+    )} hours of flight.`
+  );
 }

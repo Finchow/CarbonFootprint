@@ -27,7 +27,7 @@ body {
   background-color: #e8a87c;
 }
 
-h1 {
+#title {
   margin-left: 2vh;
 }
 
@@ -112,8 +112,8 @@ h1 {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.4;
+  transition: 0.4;
 }
 
 .slider:before {
@@ -150,7 +150,17 @@ input:checked + .slider:before {
 /* Main part */
 
 .main-section {
-  margin-left: 30vh;
+  margin-left: 32vh;
+  display: flex;
+}
+
+.main-section p {
+  font-size: 20px !important;
+}
+
+.main-section div {
+  width: 50%;
+  height: 100%;
 }
 
 /* 
