@@ -152,6 +152,9 @@ input:checked + .slider:before {
 .main-section {
   margin-left: 32vh;
   display: flex;
+  border-left-width: 5px;
+  border-left-color: whitesmoke;
+  border-style: dashed;
 }
 
 .main-section p {

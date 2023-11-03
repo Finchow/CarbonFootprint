@@ -13,7 +13,7 @@ function clickHandler() {
   }
   output = Math.round(calcCO2(clientUsage, Emissions) * 100) / 100;
   if (clientUsage > 0) {
-    statWriter(output);
+    statWriter(clientUsage, output);
   }
 }
 
@@ -80,7 +80,7 @@ function houseCalculator() {
   }
 }
 
-function statWriter(totalCo2) {
+function statWriter(clientUsage, totalCo2) {
   documentWriter("usage", `Your EAC is ${clientUsage} kWh`);
   documentWriter(
     "totalOutput",
@@ -104,3 +104,5 @@ function statWriter(totalCo2) {
     )} miles.`
   );
 }
+
+function averageWriter() {}
