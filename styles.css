@@ -152,9 +152,6 @@ input:checked + .slider:before {
 .main-section {
   margin-left: 32vh;
   display: flex;
-  border-left-width: 5px;
-  border-left-color: whitesmoke;
-  border-style: dashed;
 }
 
 .main-section p {
@@ -165,11 +162,3 @@ input:checked + .slider:before {
   width: 50%;
   height: 100%;
 }
-
-/* 
-  #E27D60  
-  #85DCBA
-  #E8A87C
-  #C38D9E
-  #41B3A3  
-*/

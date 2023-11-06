@@ -57,11 +57,11 @@ function calcCO2(usage, emissions) {
 }
 
 function peopleCalculator() {
-  if (clientUsage < 1800) {
+  if (clientUsage < 7500) {
     return "1 to 2";
-  } else if (clientUsage < 3200) {
+  } else if (clientUsage < 11500) {
     return "2 to 3";
-  } else if (clientUsage < 4100 || clientUsage > 4100) {
+  } else if (clientUsage < 17000 || clientUsage > 17000) {
     return "4 to 5";
   }
 }
