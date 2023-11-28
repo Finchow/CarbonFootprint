@@ -17,33 +17,37 @@ function clickHandler() {
   }
 }
 
-function monthlySwitch() {
-  function changeText(period1, period2) {
+function switchPeriods(periods) {
+  period1 = periods.period1;
+  period2 = periods.period2;
+  if (periods.period1 == "monthly" || periods.period1 == "annual") {
     documentWriter(
       "top-text",
       `Enter your estimated ${period1} consumption for electricity (Kwh)`
     );
     documentWriter("monthly-text", `Switch to ${period2} consumption`);
+  } else {
+    documentWriter("personal", `Your ${period1} Statistics:`);
+    documentWriter("average", `Average UK ${period2} Consumption:`);
   }
+}
+
+function monthlySwitch() {
   monthly = !monthly;
   if (monthly) {
-    changeText("monthly", "annual");
+    switchPeriods({ period1: "monthly", period2: "annual" });
   } else {
-    changeText("annual", "monthly");
+    switchPeriods({ period1: "annual", period2: "monthly" });
   }
   clickHandler();
 }
 
 function businessSwitch() {
-  function changeText(period1, period2) {
-    documentWriter("personal", `Your ${period1} Statistics:`);
-    documentWriter("average", `Average UK ${period2} Consumption:`);
-  }
   business = !business;
   if (business) {
-    changeText("Business", "Business");
+    switchPeriods({ period1: "Business", period2: "Business" });
   } else {
-    changeText("", "Citizens");
+    switchPeriods({ period1: "", period2: "Citizens" });
   }
   clickHandler();
 }
